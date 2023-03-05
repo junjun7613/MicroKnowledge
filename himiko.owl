@@ -1,0 +1,570 @@
+@prefix : <https://junjun7613.github.io/MicroKnowledge/himiko.owl> .
+@prefix ex: <https://junjun7613.github.io/RomanFactoid_v2/Roman_Contextual_Factoid.owl#> .
+@prefix fpo: <https://github.com/johnBradley501/FPO/raw/master/fpo.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix hutime: <http://resource.hutime.org/ontology/> .
+@base <https://junjun7613.github.io/MicroKnowledge/himiko.owl> .
+
+<https://junjun7613.github.io/MicroKnowledge/himiko.owl#> rdf:type owl:Ontology ;
+                                                           owl:versionIRI <https://junjun7613.github.io/MicroKnowledge/himiko.owl/1.0.0> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#assertionEnds
+:assertionEnds rdf:type owl:ObjectProperty ;
+               rdfs:domain :Factoid ;
+               rdfs:range :Char .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#assertionStarts
+:assertionStarts rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Factoid ;
+                 rdfs:range :Char .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#because
+:because rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :causalRelationship ;
+         owl:inverseOf :therefore .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#causalRelationship
+:causalRelationship rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :factoidRelationship .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#containsChar
+:containsChar rdf:type owl:ObjectProperty ;
+              rdfs:domain :LemmaReference ,
+                          :SourceDescription ;
+              rdfs:range :Char .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#containsLemma
+:containsLemma rdf:type owl:ObjectProperty ;
+               rdfs:domain :Factoid ;
+               rdfs:range :LemmaReference .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#contextualAspectOf
+:contextualAspectOf rdf:type owl:ObjectProperty ;
+                    rdfs:domain :EntityInContext ;
+                    rdfs:range :Entity .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#descriptionEnds
+:descriptionEnds rdf:type owl:ObjectProperty ;
+                 rdfs:domain :SourceDescription ;
+                 rdfs:range :Char .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#descriptionStarts
+:descriptionStarts rdf:type owl:ObjectProperty ;
+                   rdfs:domain :SourceDescription ;
+                   rdfs:range :Char .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#factoidRelationship
+:factoidRelationship rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Factoid ;
+                     rdfs:range :Factoid .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#finishes
+:finishes rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :temporalRelationship .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#hadParticipant
+:hadParticipant rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :hasReference .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#hasDescription
+:hasDescription rdf:type owl:ObjectProperty ;
+                rdfs:domain :Reference ;
+                rdfs:range :SourceDescription .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#hasDetailedType
+:hasDetailedType rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Factoid ,
+                             :Reference .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#hasImageInSourceAs
+:hasImageInSourceAs rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Char ,
+                                :Reference ;
+                    rdfs:range :MicroContent .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#hasPredicate
+:hasPredicate rdf:type owl:ObjectProperty ;
+              rdfs:domain :Factoid ;
+              rdfs:range :LemmaReference .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#hasProperty
+:hasProperty rdf:type owl:ObjectProperty ;
+             rdfs:domain :Factoid ;
+             rdfs:range :LemmaReference .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#hasReference
+:hasReference rdf:type owl:ObjectProperty ;
+              rdfs:domain :Factoid ;
+              rdfs:range :Reference .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#hasRole
+:hasRole rdf:type owl:ObjectProperty ;
+         rdfs:domain :Reference ;
+         rdfs:range :Role .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#hasTimeSpan
+:hasTimeSpan rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :hasReference .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#includes
+:includes rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :temporalRelationship ;
+          owl:inverseOf :occursDuring .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#isEqualInTime
+:isEqualInTime rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :temporalRelationship .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#isMetInTimeBy
+:isMetInTimeBy rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :temporalRelationship ;
+               owl:inverseOf :meetsInTimeWith .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#lemmaEnds
+:lemmaEnds rdf:type owl:ObjectProperty ;
+           rdfs:domain :LemmaReference ;
+           rdfs:range :Char .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#lemmaStarts
+:lemmaStarts rdf:type owl:ObjectProperty ;
+             rdfs:domain :LemmaReference ;
+             rdfs:range :Char .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#meetsInTimeWith
+:meetsInTimeWith rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :temporalRelationship .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#movedFrom
+:movedFrom rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasReference .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#movedTo
+:movedTo rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :hasReference .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#occuredInThePresenceOf
+:occuredInThePresenceOf rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :hasReference .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#occursAfter
+:occursAfter rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :temporalRelationship ;
+             owl:inverseOf :occursBefore .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#occursBefore
+:occursBefore rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :temporalRelationship .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#occursDuring
+:occursDuring rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :temporalRelationship .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#overlapsInTimeWith
+:overlapsInTimeWith rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :temporalRelationship .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#referencesEntity
+:referencesEntity rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Reference ,
+                              :SourceDescription ;
+                  rdfs:range :Entity .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#referencesEntityInContext
+:referencesEntityInContext rdf:type owl:ObjectProperty ;
+                           rdfs:domain :Reference ;
+                           rdfs:range :EntityInContext .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#referencesEvent
+:referencesEvent rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdfs:domain :Factoid ;
+                 rdfs:range :Event .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#referencesLemma
+:referencesLemma rdf:type owl:ObjectProperty ;
+                 rdfs:domain :LemmaReference ;
+                 rdfs:range :Lemma .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#source
+:source rdf:type owl:ObjectProperty ;
+        rdfs:domain :Factoid ;
+        rdfs:range :Source .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#starts
+:starts rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :temporalRelationship .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#temporalRelationship
+:temporalRelationship rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :factoidRelationship .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#therefore
+:therefore rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :causalRelationship .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#tookPlaceAt
+:tookPlaceAt rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :hasReference .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#tookPlaceOnOrWithin
+:tookPlaceOnOrWithin rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :hasReference .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#unit
+:unit rdf:type owl:ObjectProperty ;
+      rdfs:domain :ObjectReference ;
+      rdfs:range :Unit .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#hasNameInSourceAs
+:hasNameInSourceAs rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Reference ;
+                   rdfs:range rdfs:Literal .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#hasNote
+:hasNote rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Factoid ;
+         rdfs:range rdfs:Literal .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#hasText
+:hasText rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Factoid ;
+         rdfs:range rdfs:Literal .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#lemma
+:lemma rdf:type owl:DatatypeProperty ;
+       rdfs:domain :LemmaReference ;
+       rdfs:range rdfs:Literal .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#quantity
+:quantity rdf:type owl:DatatypeProperty ;
+          rdfs:domain :ObjectReference ;
+          rdfs:range xsd:integer .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#ActionFactoid
+:ActionFactoid rdf:type owl:Class ;
+               rdfs:subClassOf :EventFactoid .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#Char
+:Char rdf:type owl:Class .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#CommunityInContext
+:CommunityInContext rdf:type owl:Class ;
+                    rdfs:subClassOf :OrgInContext .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#CommunityReference
+:CommunityReference rdf:type owl:Class ;
+                    rdfs:subClassOf :OrgReference .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#ConceptualObjDescription
+:ConceptualObjDescription rdf:type owl:Class ;
+                          rdfs:subClassOf :ObjectDescription .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#ConceptualObjReference
+:ConceptualObjReference rdf:type owl:Class ;
+                        rdfs:subClassOf :ObjectReference .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#ContactFactoid
+:ContactFactoid rdf:type owl:Class ;
+                rdfs:subClassOf :EventFactoid .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#DateDescription
+:DateDescription rdf:type owl:Class ;
+                 rdfs:subClassOf :SourceDescription .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#DateReference
+:DateReference rdf:type owl:Class ;
+               rdfs:subClassOf :Reference .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#DirectObject
+:DirectObject rdf:type owl:Class ;
+              rdfs:subClassOf :Role .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#Entity
+:Entity rdf:type owl:Class .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#EntityInContext
+:EntityInContext rdf:type owl:Class .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#Event
+:Event rdf:type owl:Class .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#EventFactoid
+:EventFactoid rdf:type owl:Class ;
+              rdfs:subClassOf :Factoid .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#Factoid
+:Factoid rdf:type owl:Class .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#FamilialRelationshipFactoid
+:FamilialRelationshipFactoid rdf:type owl:Class ;
+                             rdfs:subClassOf :RelationshipFactoid .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#FemalePersonReference
+:FemalePersonReference rdf:type owl:Class ;
+                       rdfs:subClassOf :PersonReference .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#GeoFactoid
+:GeoFactoid rdf:type owl:Class ;
+            rdfs:subClassOf :Factoid .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#GroupInContext
+:GroupInContext rdf:type owl:Class ;
+                rdfs:subClassOf :OrgInContext .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#GroupReference
+:GroupReference rdf:type owl:Class ;
+                rdfs:subClassOf :OrgReference .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#IndirectObject
+:IndirectObject rdf:type owl:Class ;
+                rdfs:subClassOf :Role .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#InstitutionInContext
+:InstitutionInContext rdf:type owl:Class ;
+                      rdfs:subClassOf :OrgInContext .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#InstitutionReference
+:InstitutionReference rdf:type owl:Class ;
+                      rdfs:subClassOf :OrgReference .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#Lemma
+:Lemma rdf:type owl:Class .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#LemmaReference
+:LemmaReference rdf:type owl:Class .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#MalePersonReference
+:MalePersonReference rdf:type owl:Class ;
+                     rdfs:subClassOf :PersonReference .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#MicroContent
+:MicroContent rdf:type owl:Class .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#ObjectDescription
+:ObjectDescription rdf:type owl:Class ;
+                   rdfs:subClassOf :SourceDescription .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#ObjectInContext
+:ObjectInContext rdf:type owl:Class ;
+                 rdfs:subClassOf :EntityInContext .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#ObjectReference
+:ObjectReference rdf:type owl:Class ;
+                 rdfs:subClassOf :Reference .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#OfficeFactoid
+:OfficeFactoid rdf:type owl:Class ;
+               rdfs:subClassOf :StateOfAffairsFactoid .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#OrgDescription
+:OrgDescription rdf:type owl:Class ;
+                rdfs:subClassOf :SourceDescription .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#OrgInContext
+:OrgInContext rdf:type owl:Class ;
+              rdfs:subClassOf :EntityInContext .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#OrgReference
+:OrgReference rdf:type owl:Class ;
+              rdfs:subClassOf :Reference .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#PersonDescription
+:PersonDescription rdf:type owl:Class ;
+                   rdfs:subClassOf :SourceDescription .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#PersonInContext
+:PersonInContext rdf:type owl:Class ;
+                 rdfs:subClassOf :EntityInContext .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#PersonReference
+:PersonReference rdf:type owl:Class ;
+                 rdfs:subClassOf :Reference .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#PhysicalObjDescription
+:PhysicalObjDescription rdf:type owl:Class ;
+                        rdfs:subClassOf :ObjectDescription .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#PhysicalObjReference
+:PhysicalObjReference rdf:type owl:Class ;
+                      rdfs:subClassOf :ObjectReference .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#PlaceDescription
+:PlaceDescription rdf:type owl:Class ;
+                  rdfs:subClassOf :SourceDescription .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#PlaceInContext
+:PlaceInContext rdf:type owl:Class ;
+                rdfs:subClassOf :EntityInContext .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#PlaceReference
+:PlaceReference rdf:type owl:Class ;
+                rdfs:subClassOf :Reference .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#Reference
+:Reference rdf:type owl:Class .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#RelationshipFactoid
+:RelationshipFactoid rdf:type owl:Class ;
+                     rdfs:subClassOf :StateOfAffairsFactoid .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#Role
+:Role rdf:type owl:Class .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#SituationFactoid
+:SituationFactoid rdf:type owl:Class ;
+                  rdfs:subClassOf :StateOfAffairsFactoid .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#SocialRelationshipFactoid
+:SocialRelationshipFactoid rdf:type owl:Class ;
+                           rdfs:subClassOf :RelationshipFactoid .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#Source
+:Source rdf:type owl:Class .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#SourceDescription
+:SourceDescription rdf:type owl:Class .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#StateOfAffairsFactoid
+:StateOfAffairsFactoid rdf:type owl:Class ;
+                       rdfs:subClassOf :Factoid .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#StatementFactoid
+:StatementFactoid rdf:type owl:Class ;
+                  rdfs:subClassOf :EventFactoid .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#Subject
+:Subject rdf:type owl:Class ;
+         rdfs:subClassOf :Role .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#ThoughtFactoid
+:ThoughtFactoid rdf:type owl:Class ;
+                rdfs:subClassOf :EventFactoid .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#TitleFactoid
+:TitleFactoid rdf:type owl:Class ;
+              rdfs:subClassOf :StateOfAffairsFactoid .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#Unit
+:Unit rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
