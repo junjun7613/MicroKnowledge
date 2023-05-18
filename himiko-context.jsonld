@@ -1,0 +1,10 @@
+{
+   "@context":
+   {
+    "https://junjun7613.github.io/MicroKnowledge/himiko.owl#descriptionEnds":
+      {
+         "@id": "https://junjun7613.github.io/MicroKnowledge/himiko.owl#descriptionEnds",
+         "@type": "@id"
+      }
+   }
+}
