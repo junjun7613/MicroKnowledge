@@ -235,6 +235,11 @@
       {
          "@id": "https://junjun7613.github.io/MicroKnowledge/himiko.owl#unit",
          "@type": "@id"
+      },
+   "https://junjun7613.github.io/MicroKnowledge/himiko.owl#then":
+      {
+         "@id": "https://junjun7613.github.io/MicroKnowledge/himiko.owl#then",
+         "@type": "@id"
       }
    }
 }
