@@ -97,6 +97,11 @@
                 rdfs:range :SourceDescription .
 
 
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#hasDetailedType
+:hasDetailedType rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Factoid .
+
+
 ###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#hasImageInSourceAs
 :hasImageInSourceAs rdf:type owl:ObjectProperty ;
                     rdfs:domain :Char ,
@@ -120,6 +125,11 @@
 :hasReference rdf:type owl:ObjectProperty ;
               rdfs:domain :Factoid ;
               rdfs:range :Reference .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#hasRole
+:hasRole rdf:type owl:ObjectProperty ;
+         rdfs:domain :Reference .
 
 
 ###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#hasTimeSpan
@@ -249,6 +259,11 @@
                       rdfs:subPropertyOf :factoidRelationship .
 
 
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#then
+:then rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf :factoidRelationship .
+
+
 ###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#therefore
 :therefore rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf :causalRelationship .
@@ -274,12 +289,6 @@
 #    Data properties
 #################################################################
 
-###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#hasDetailedType
-:hasDetailedType rdf:type owl:DatatypeProperty ;
-                 rdfs:domain :Factoid ,
-                             :Reference .
-
-
 ###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#hasNameInSourceAs
 :hasNameInSourceAs rdf:type owl:DatatypeProperty ;
                    rdfs:domain :Reference ;
@@ -290,12 +299,6 @@
 :hasNote rdf:type owl:DatatypeProperty ;
          rdfs:domain :Factoid ;
          rdfs:range rdfs:Literal .
-
-
-###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#hasRole
-:hasRole rdf:type owl:DatatypeProperty ;
-         rdfs:domain :Reference ;
-         rdfs:range xsd:string .
 
 
 ###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#hasText
