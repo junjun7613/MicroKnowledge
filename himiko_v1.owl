@@ -129,7 +129,8 @@
 
 ###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#hasRole
 :hasRole rdf:type owl:ObjectProperty ;
-         rdfs:domain :Reference .
+         rdfs:domain :Reference ;
+         rdfs:range :Role .
 
 
 ###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#hasTimeSpan
@@ -367,11 +368,6 @@
                rdfs:subClassOf :Reference .
 
 
-###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#DirectObject
-:DirectObject rdf:type owl:Class ;
-              rdfs:subClassOf :Role .
-
-
 ###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#Entity
 :Entity rdf:type owl:Class .
 
@@ -416,11 +412,6 @@
 ###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#GroupReference
 :GroupReference rdf:type owl:Class ;
                 rdfs:subClassOf :OrgReference .
-
-
-###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#IndirectObject
-:IndirectObject rdf:type owl:Class ;
-                rdfs:subClassOf :Role .
 
 
 ###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#InstitutionInContext
@@ -564,11 +555,6 @@
 ###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#StatementFactoid
 :StatementFactoid rdf:type owl:Class ;
                   rdfs:subClassOf :EventFactoid .
-
-
-###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#Subject
-:Subject rdf:type owl:Class ;
-         rdfs:subClassOf :Role .
 
 
 ###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#ThoughtFactoid
