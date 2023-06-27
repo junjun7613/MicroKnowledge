@@ -456,6 +456,11 @@
                  rdfs:subClassOf :Reference .
 
 
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#OccupationFactoid
+:OccupationFactoid rdf:type owl:Class ;
+                   rdfs:subClassOf :StateOfAffairsFactoid .
+
+
 ###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#OfficeFactoid
 :OfficeFactoid rdf:type owl:Class ;
                rdfs:subClassOf :StateOfAffairsFactoid .
@@ -514,6 +519,16 @@
 ###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#PlaceReference
 :PlaceReference rdf:type owl:Class ;
                 rdfs:subClassOf :Reference .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#PossessionFactoid
+:PossessionFactoid rdf:type owl:Class ;
+                   rdfs:subClassOf :StateOfAffairsFactoid .
+
+
+###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#PropertyFactoid
+:PropertyFactoid rdf:type owl:Class ;
+                 rdfs:subClassOf :StateOfAffairsFactoid .
 
 
 ###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#Reference
