@@ -282,7 +282,7 @@
 
 ###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#unit
 :unit rdf:type owl:ObjectProperty ;
-      rdfs:domain :ObjectReference ;
+      rdfs:domain :Reference ;
       rdfs:range :Unit .
 
 
@@ -316,7 +316,7 @@
 
 ###  https://junjun7613.github.io/MicroKnowledge/himiko.owl#quantity
 :quantity rdf:type owl:DatatypeProperty ;
-          rdfs:domain :ObjectReference ;
+          rdfs:domain :Reference ;
           rdfs:range xsd:integer .
 
 
