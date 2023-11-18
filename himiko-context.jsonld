@@ -245,6 +245,11 @@
       {
          "@id": "https://junjun7613.github.io/MicroKnowledge/himiko.owl#then",
          "@type": "@id"
+      },
+      "https://junjun7613.github.io/MicroKnowledge/himiko.owl#hasSyntaxRole":
+      {
+         "@id": "https://junjun7613.github.io/MicroKnowledge/himiko.owl#hasSyntaxRole",
+         "@type": "@id"
       }
    }
 }
