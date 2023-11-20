@@ -74,7 +74,7 @@
    "https://junjun7613.github.io/MicroKnowledge/himiko.owl#hasDetailedType":
       {
          "@id": "https://junjun7613.github.io/MicroKnowledge/himiko.owl#hasDetailedType",
-         "@type": "@id"
+         "@type": "xsd:string"
       },
    "https://junjun7613.github.io/MicroKnowledge/himiko.owl#hasImageInSourceAs":
       {
@@ -99,7 +99,7 @@
    "https://junjun7613.github.io/MicroKnowledge/himiko.owl#hasRole":
       {
          "@id": "https://junjun7613.github.io/MicroKnowledge/himiko.owl#hasRole",
-         "@type": "@id"
+         "@type": "xsd:string"
       },
    "https://junjun7613.github.io/MicroKnowledge/himiko.owl#hasTimeSpan":
       {
