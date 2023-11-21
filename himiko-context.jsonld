@@ -234,7 +234,7 @@
    "https://junjun7613.github.io/MicroKnowledge/himiko.owl#unit":
       {
          "@id": "https://junjun7613.github.io/MicroKnowledge/himiko.owl#unit",
-         "@type": "@id"
+         "@type": "xsd:string"
       },
    "https://junjun7613.github.io/MicroKnowledge/himiko.owl#quantity":
       {
